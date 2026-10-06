@@ -2,7 +2,7 @@
 
 围绕真实业务问题开展 AI 工作坊与实验的双语静态网站。中文在根目录，英文在 `en/`；使用原生 HTML、CSS、JavaScript 与本地字体、图片，没有运行时依赖或内容管理后台。
 
-交付目录是 `design/site`，Git 在此目录初始化。公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，`main` 分支已存在；2026-10-06 已通过本机 Docker Nginx 与 Cloudflare Tunnel 上线至 [www.jielab.cc](https://www.jielab.cc/)。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
+交付目录是 `design/site`，Git 在此目录初始化。公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，`main` 分支已存在；2026-10-07 已迁移至 Cloudflare Workers Static Assets 云端托管，正式入口为 [www.jielab.cc](https://www.jielab.cc/)。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
 
 ## 本地预览
 
@@ -111,7 +111,25 @@ python3 -m json.tool consultation-config.json > /dev/null
 
 2026-10-07 已将 `consultation-config.json` 的 `url` / `url_en` 分别接入公开的中文 / 英文飞书合作需求表单。中英文首页的咨询按钮打开对应语言的表单，访客无需登录即可填写；提交内容保存至同一内部多维表格的中文 / 英文需求表，仅协作者可访问。工作坊选项支持多选：半天、1 天、2 天、5 天、陪跑，英文版使用对应英文选项。公开工作坊与合作说明为 https://ncno2l9v0rt4.feishu.cn/docx/MkUedItipoYA1AxOsDqcppvbnKe 。中英文需求各自的新需求提醒和跟进日期提醒由飞书表格自动化处理，接收人为刘杰；不使用邮件通知。网站仓库不包含内部底表链接、客户提交内容或飞书凭据。
 
-GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书合作需求表单已接入。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
+## Cloudflare 云端部署（2026-10-07）
+
+官网由 Cloudflare Workers Static Assets 的 `jielabcc` 服务托管，域名 `www.jielab.cc` 与 `jielab.cc` 均已绑定，中文 `/`、英文 `/en/` 可直接访问。备用地址为 https://jielabcc.jielabcc.workers.dev/ 。官网不再经过本机 Docker 或 Tunnel，电脑关机、休眠或本机网络断开不会中断已部署的网站。当前使用免费方案，未开通付费服务。
+
+部署文件：`package.json`、`package-lock.json`、`wrangler.jsonc` 与 `scripts/package_site.py`。安装 Node.js 22 或以上、Python 3 后执行：
+
+```sh
+npm ci
+npm run build
+npx wrangler deploy --dry-run
+```
+
+构建先生成双语内容并校验 SEO，再把公开网页、脚本、样式、字体和图像打包到 `dist/`。只从 Git 已跟踪的资源白名单中复制素材；维护 JSON、Python、Markdown、原始提示词、Git、环境变量及内部客户表格不进入线上目录。`dist/_redirects` 将 `/` 与 `/en/` 重写到对应 `index.html`，保留原有 `.html` 地址；`dist/_headers` 配置 HTML 无缓存、图像短期缓存及基本响应头。
+
+手动更新需先通过 `npx wrangler login` 登录该 Cloudflare 账号，再执行 `npm run deploy`。域名由 Cloudflare 后台管理，配置文件没有 `route` / `routes` 字段，避免用代码改变后台域名设置，见 [Wrangler 配置说明](https://developers.cloudflare.com/workers/wrangler/configuration/)。GitHub 自动构建尚待 Cloudflare GitHub 应用的仓库授权；授权后使用 `main`、构建命令 `npm run build`、部署命令 `npx wrangler deploy`。
+
+本机预览仍可使用端口 8765 或 Docker Nginx 的 8080。原来的 `/admin/` 本机管理代理没有发布到云端，使用 http://localhost:8080/admin/ 访问；线上此路径返回 404。SSH、sync、bot、test 的隧道服务保持运行。旧官网 DNS 备份与部署核验截图保留在上层私有项目的 `.consultation-work/cloudflare-deploy/`，不随官网发布。
+
+已在正式域名的浏览器验证中文、英文、威高案例页、图片、语言切换与两种语言对应的飞书登记链接。限定设计评审不表示外部原文持续可访问、全面无障碍认证、素材许可或缺失 Logo 已补齐。
 
 
 ## SEO 与生成式搜索维护（2026-10-06）
@@ -136,7 +154,7 @@ node --check case-data.js
 
 本机 Nginx 配置位于上层项目，本轮已备份后给管理代理及 JSON/Markdown/Python 维护文件增加 X-Robots-Tag: noindex, nofollow；管理页面与代理地址未改，隐藏路径继续 404。该配置不在本静态 Git 仓库中，新部署需继承此索引保护。备份、检查记录和浏览器截图位于上层项目 `backups/seo-20261006/` 与 `.impeccable/review/seo-20261006/`，不随站点公开发布。
 
-后续由站点所有者登录并真实验证 Google Search Console、Bing Webmaster Tools、百度搜索资源平台，提交 `https://www.jielab.cc/sitemap.xml`（百度按已验证后台实际提供的提交入口），检查重要页面抓取/索引与 AI 可见性报告。没有执行所有权验证或平台提交，也没有创建虚假验证文件。Cloudflare 需登录后另行配置裸域入口及到 www 的重定向；当前所有规范 URL 仅使用已上线的 www 域名。合作登记已接入真实飞书表单，内部需求数据不对外公开。
+后续由站点所有者登录并真实验证 Google Search Console、Bing Webmaster Tools、百度搜索资源平台，提交 `https://www.jielab.cc/sitemap.xml`（百度按已验证后台实际提供的提交入口），检查重要页面抓取/索引与 AI 可见性报告。没有执行所有权验证或平台提交，也没有创建虚假验证文件。裸域已绑定同一云端官网，当前以页面 canonical 指向 www；尚未增加裸域到 www 的服务端重定向。合作登记已接入真实飞书表单，内部需求数据不对外公开。
 
 本轮查阅的官方依据：
 
