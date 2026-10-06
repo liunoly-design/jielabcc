@@ -2,7 +2,7 @@
 
 围绕真实业务问题开展 AI 工作坊与实验的双语静态网站。中文在根目录，英文在 `en/`；使用原生 HTML、CSS、JavaScript 与本地字体、图片，没有运行时依赖或内容管理后台。
 
-交付目录是 `design/site`，Git 在此目录初始化。目标公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，交付分支为 `main`。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
+交付目录是 `design/site`，Git 在此目录初始化。公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，`main` 分支已存在；网站托管尚未部署。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
 
 ## 本地预览
 
@@ -66,7 +66,7 @@ python3 scripts/update_fonts.py
 
 真实客户图片均为本地原图，记录在 `assets/photos/sources.json`：四篇报道封面和三张威高工作坊现场图片。理念与威高详情显示威高照片，团队区使用保钰鑫实际工作坊合影并显示来源；它不是实验室员工编制合影。缺图时保留明确不可用状态，不用合成场景当现场证据。
 
-新首屏 `assets/experiment-hero.png` 由内置 ImageGen 生成，表现蓝色迭代路径汇聚到橙色成果的雕塑概念，prompt 保存在 `assets/experiment-hero.prompt.txt`。方法图为 `methodology-zh.png` 与 `methodology-en.png`，caption 在图下方显示“问题 · 实验 · 价值 / Problem · Experiment · Value”，不显示 AI 生成标签；生成来源与 prompt 保留在 `assets/GENERATED-IMAGES.json` 及对应 `.prompt.txt`。这些图表达品牌与方法，不能作客户事件照片或项目成果凭证。
+首屏已恢复原来的细蓝色回环方法路径：内联 SVG 显示“痛点挖掘 / 实验验证 / 价值实现”，英文为“Discover pain points / Validate experiments / Realise value”，使用 `role=img` 与对应语言的 `aria-label`。既有黄猫 `assets/cat-v2.png` 保持原样。废弃雕塑概念图及其 prompt 已移除，本轮未生成新的栅格图。方法图为 `methodology-zh.png` 与 `methodology-en.png`，caption 在图下方显示“问题 · 实验 · 价值 / Problem · Experiment · Value”，不显示 AI 生成标签；生成来源与 prompt 保留在 `assets/GENERATED-IMAGES.json` 及对应 `.prompt.txt`。这些图表达品牌与方法，不能作客户事件照片或项目成果凭证。
 
 ## 字体与交互
 
@@ -74,17 +74,17 @@ python3 scripts/update_fonts.py
 
 `scripts/update_fonts.py` 递归扫描 HTML 及 `app.js`、`cases.json`、`clients.json`，通过 Google Fonts 更新字形子集与 `fonts.css`，执行需要网络。新增文字后核对字形，单独修改 `articles.json` 未必纳入字体集合，须同步实际页面。
 
-实际断点为 1200、980、850、650px；980px 以下折叠导航，650px 以下堆叠主要内容。容器最大 1400px，边距依次 68、48、32、20px。页面采用原生滚动与 proximity scroll snap，不劫持滚轮、不保证每次整屏停靠；长内容自然增高，详情自然滚动。减少动态模式关闭平滑滚动、动画、过渡、停靠和首屏图位移。
+实际断点为 1200、980、850、650px；980px 以下折叠导航，650px 以下堆叠主要内容。容器最大 1400px，边距依次 68、48、32、20px。页面采用原生滚动与 proximity scroll snap，不劫持滚轮、不保证每次整屏停靠；长内容自然增高，详情自然滚动。减少动态模式关闭平滑滚动、动画、过渡和停靠。
 
-行业标签支持方向键、Home、End与唯一选中状态，普通模式有 300ms 文字区过渡。页头显示阅读进度与同页章节激活状态；细指针设备的链接使用品牌 SVG 光标，保留 pointer 回退，未实现全页追踪光标。首屏图仅在自身范围内轻微随指针位移，触屏不承诺该效果。菜单支持 Escape 关闭并恢复焦点。初始 hash 恢复等待字体与本地图片建立布局，仅在用户未操作且 hash 未变时恢复目标。
+行业标签支持方向键、Home、End与唯一选中状态，普通模式有 300ms 文字区过渡。页头显示阅读进度与同页章节激活状态；细指针设备的链接使用品牌 SVG 光标，保留 pointer 回退，未实现全页追踪光标。首屏方法路径为静态图形，已移除指针跟随位移。菜单支持 Escape 关闭并恢复焦点。初始 hash 恢复等待字体与本地图片建立布局，仅在用户未操作且 hash 未变时恢复目标。
 
-既有英文 hero 网格与桌面工作坊列宽规则具有更高选择器优先级，仍与中文局部新布局不同；本轮记录该差异，未改动既定 VI 或基础 token。
+双语首屏共用 `minmax(0,1fr) 32%` 网格与 45px 间距，850px 以下为 33% 与 25px，650px 以下堆叠。方法路径容器桌面 340 × 420px，移动 260 × 315px，最大宽度 100%。英文桌面工作坊仍保留既有列宽规则；既定 VI 与基础 token 保持原样。
 
 ## 验证与交付边界
 
-2026-10-06 最新独立 finish review 为 **Ship — scoped pass for the current static prototype and truthful asset state**。评审查看源码及十二张有效截图，未自行操作浏览器。评审资料位于原项目 `.impeccable/review/oct6-finish-review.md` 与 `oct6-*`，不在本静态仓库内。
+2026-10-06 首屏恢复后的独立 finish review 已完成，结论为 **Ship — scoped pass for the restored bilingual homepage hero**，报告为原项目 `.impeccable/review/hero-restored-finish-review.md`。评审逐张打开截图及视觉参考，未操作浏览器；结论仅覆盖本轮双语首屏恢复和两种视口，不认证全站或中间宽度。静态 detector 记录18项警告（8项 padding、5项 contrast、1项 tiny-text、4项 leading），评审未发现这些构成本轮恢复图解的实质缺陷。本轮中文与英文桌面（1101 × 876）及移动（390 × 844）四张截图为 `hero-restored-{zh,en}-{desktop,mobile}.png`；实施方测量这些首页无横向溢出或未加载图片，桌面/移动可见边距为 48/20px。上述评审资料不在本静态仓库内。此前 `oct6-finish-review.md` 的 **Ship — scoped pass for the current static prototype and truthful asset state** 是当时静态原型与素材状态的限定结论，不作为本轮首屏恢复的评审结论。
 
-实施方核对十个 HTML 的六项导航、内部资源依赖、JavaScript 语法与五个唯一报道 URL；浏览器测量截图路由无横向溢出或未加载图片、六个桌面 Logo 框均为 132px，桌面/移动可见边距为 48/20px。移动测试包括 Legal 标签 ArrowRight 到 Education，以及菜单展开、Escape关闭。静态 detector 有七项 screen-wrapper 留白警告，内层容器与截图实测不支持实质拥挤问题；此结论不代表全面设备测试。
+此前实施方核对十个 HTML 的六项导航、内部资源依赖、JavaScript 语法与五个唯一报道 URL；浏览器测量截图路由无横向溢出或未加载图片、六个桌面 Logo 框均为 132px，桌面/移动可见边距为 48/20px。移动测试包括 Legal 标签 ArrowRight 到 Education，以及菜单展开、Escape关闭。静态 detector 有七项 screen-wrapper 留白警告，内层容器与截图实测不支持实质拥挤问题；此结论不代表全面设备测试。
 
 常规只读检查：
 
