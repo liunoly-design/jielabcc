@@ -2,7 +2,7 @@
 
 围绕真实业务问题开展 AI 工作坊与实验的双语静态网站。中文在根目录，英文在 `en/`；使用原生 HTML、CSS、JavaScript 与本地字体、图片，没有运行时依赖或内容管理后台。
 
-交付目录是 `design/site`，Git 在此目录初始化。公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，`main` 分支已存在；网站托管尚未部署。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
+交付目录是 `design/site`，Git 在此目录初始化。公开仓库为 [liunoly-design/jielabcc](https://github.com/liunoly-design/jielabcc)，`main` 分支已存在；2026-10-06 已通过本机 Docker Nginx 与 Cloudflare Tunnel 上线至 [www.jielab.cc](https://www.jielab.cc/)。公开仓库根目录只承载本静态站点，不包含上层项目的旧服务、环境变量或个人保存网页。
 
 ## 本地预览
 
@@ -108,4 +108,4 @@ python3 -m json.tool consultation-config.json > /dev/null
 
 当前合作登记 URL 故意留空，按钮 disabled，没有飞书提交、邮件、存储或通知后台。取得真实 HTTPS URL 后写入 `consultation-config.json` 并构建；格式校验不验证飞书域名、权限、可访问性或保存/通知结果。
 
-GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。网站托管与飞书服务接入需另行配置；限定评审不证明外部原文可访问、生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
+GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书服务接入仍待真实链接。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
