@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'LabChinese';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/lab-chinese-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabChinese';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/lab-chinese-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabChinese';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/lab-chinese-2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabChinese';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/lab-chinese-3.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabChinese';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/lab-chinese-4.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabLatin';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/lab-inter-0.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabLatin';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/lab-inter-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabLatin';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(assets/lab-inter-2.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabLatin';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(assets/lab-inter-3.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'LabLatin';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(assets/lab-inter-4.ttf) format('truetype');
+}

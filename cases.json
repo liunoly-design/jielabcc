@@ -1,0 +1,200 @@
+{
+  "pharma": [
+    {
+      "category": {
+        "zh": "医药流通",
+        "en": "Healthcare distribution"
+      },
+      "client": {
+        "zh": "国润医疗 · 保钰鑫医疗",
+        "en": "Guorun Medical · Baoyuxin Medical"
+      },
+      "intro": {
+        "zh": "围绕医疗供应链与管理工作，探索 AI 的实际用法。",
+        "en": "Exploring practical AI use in healthcare supply chains and management."
+      },
+      "details": {
+        "zh": [
+          "国润医疗面向中高层管理者开展 AI 赋能工作坊；保钰鑫医疗围绕供应链、岗位工作与个人兴趣开展实践。具体项目的验收需求将随真实材料补充。",
+          "通过业务议题共创、个人与团队作品路演，将学习推进到动手实践。保钰鑫医疗的工作坊历时两天一夜。",
+          "客户报道记录：国润医疗有 41 名中高层管理者参与；保钰鑫医疗学员完成 42 个作品。作品的实际业务价值、部署情况与后续验收结果待补充。"
+        ],
+        "en": [
+          "Guorun Medical ran an AI workshop for middle and senior managers. Baoyuxin Medical explored supply-chain tasks, role-specific work and personal interests. Detailed project acceptance criteria will follow with the case materials.",
+          "Business-focused co-creation and individual and team presentations connected learning with hands-on practice. Baoyuxin Medical's workshop lasted two days and one night.",
+          "The client reports record 41 participating managers at Guorun Medical and 42 works created at Baoyuxin Medical. Business value, deployment status and subsequent acceptance results have not yet been supplied."
+        ]
+      },
+      "reports": [
+        0,
+        3
+      ]
+    },
+    {
+      "category": {
+        "zh": "医药科技",
+        "en": "Healthcare technology"
+      },
+      "client": {
+        "zh": "国药数科",
+        "en": "Guoyao Shuke (国药数科)"
+      },
+      "intro": {
+        "zh": "通过跨部门、跨企业共学共创，探索 AI 与业务融合。",
+        "en": "Exploring AI in business through collaboration across departments and companies."
+      },
+      "details": {
+        "zh": [
+          "国药数科围绕实际业务开展 AI 创新工作坊，探索人工智能与业务融合的路径。",
+          "报道记录了认知、体验、创作与路演的实践方式，以及第三期工作坊的跨部门、跨企业协同共创。",
+          "已形成场景探索与阶段成果的客户记录。具体产品功能、价值测算和部署验收，将在获得真实项目材料后补充。"
+        ],
+        "en": [
+          "Guoyao Shuke explored how AI could connect with actual business work through its AI innovation workshops.",
+          "The reports describe understanding, hands-on exploration, creation and presentations, plus collaboration across departments and companies in the third workshop.",
+          "The reports document scenario exploration and stage outcomes. Specific product functionality, value assessments and deployment acceptance results will follow once real project materials are supplied."
+        ]
+      },
+      "reports": [
+        1,
+        2
+      ]
+    },
+    {
+      "category": {
+        "zh": "医疗器械生产企业",
+        "en": "Medical device manufacturing"
+      },
+      "client": {
+        "zh": "威高骨科",
+        "en": "Weigao Orthopaedics (威高骨科)"
+      },
+      "intro": {
+        "zh": "2 天，39 件作品。从工具体验走向真实业务实验。",
+        "en": "Two days, 39 works. Moving from tool exploration to real business experiments."
+      },
+      "details": {
+        "zh": [
+          "2026 年 8 月 7 日至 8 月 8 日，威高骨科组织 25 名中高层与骨干参加工作坊，覆盖管理、研发、生产、运营、政府事务、财务、战略、人力资源与营销管理等 9 个部门。目标是让 AI 进入经营、生产、政策准入与组织协同流程，找到值得持续投入的业务场景。",
+          "工作坊全程使用脱敏数据与案例，以黑客马拉松实战推进创作、展示与复盘。成果集中在生产运营与供应链、政策准入与市场情报、经营费用与决策分析、组织协同与管理自动化四类场景。现场形成可追踪、可复盘、可继续评估的应用雏形。",
+          "共完成 39 件作品，其中 21 件进入团队或公司业务成果池，8 件列为 A 级优先继续推进成果。原文建议选择 2–3 个高价值场景继续试点，将雏形推进成可复盘、可复制、可扩展的 AI 工作流。工作坊阶段成果不等于已经完成生产部署。"
+        ],
+        "en": [
+          "On 7–8 August 2026, 25 managers and key staff from nine functions at Weigao Orthopaedics joined the workshop. Management, R&D, production, operations, government affairs, finance, strategy, HR and marketing explored where AI could become part of real business workflows.",
+          "Using anonymised data and cases throughout, the workshop combined hackathon creation, presentations and review. Four areas emerged: production and supply chains; policy access and market intelligence; expenses and decision analysis; collaboration and management automation. The prototypes could be tracked, reviewed and assessed further.",
+          "Participants produced 39 works; 21 entered the team or company business-results pool and eight were prioritised for continued development. The report recommends piloting two or three high-value scenarios next. Workshop results are a stage outcome and do not establish production deployment."
+        ]
+      },
+      "reports": [
+        4
+      ],
+      "image": "assets/photos/weigao-workshop-1.webp",
+      "gallery": [
+        {
+          "src": "assets/photos/weigao-workshop-2.webp",
+          "caption": {
+            "zh": "团队成果展示与现场交流",
+            "en": "Team presentations and discussion"
+          }
+        },
+        {
+          "src": "assets/photos/weigao-workshop-3.webp",
+          "caption": {
+            "zh": "成果展示与荣誉证书颁发",
+            "en": "Presentations and certificate awards"
+          }
+        }
+      ]
+    }
+  ],
+  "valuation": [
+    {
+      "status": "illustrative",
+      "category": {
+        "zh": "评估底稿核对",
+        "en": "Working-paper checks"
+      },
+      "client": {
+        "zh": "某资产评估机构（示例）",
+        "en": "An asset valuation firm (illustrative)"
+      },
+      "intro": {
+        "zh": "把散落的资料，推进成可核对的评估底稿。",
+        "en": "Turn scattered material into working papers that can be checked."
+      },
+      "details": {
+        "zh": [
+          "一支资产评估项目团队，希望减少在委托资料、资产清单、财务表格与历史底稿之间反复查找和核对的时间。示例将问题收窄为“资料是否齐全、关键字段是否一致、结论能否回到原始依据”，先支持资料整理与核对，不让 AI 自动作出估值结论。开营前由评估师选定脱敏样本，标记资产编号、账面信息、权属文件与基准日期，并约定人工复核方式。",
+          "1 天 Skill 工作坊先完成资料提取、字段结构化和带来源的比对流程；2 天 1 夜 Hackathon 再将流程串成 MVP。实验用正常资料、缺失资料与相互矛盾的资料分别验证，逐项检查提取准确性、证据位置、缺失提示和异常处理。发现没有依据的字段就保留为空；无法识别的扫描件交回人工处理，并记录下一轮所需材料。",
+          "本示例设计的阶段交付包括：问题与验收表、样本清单、字段核对原型、人工确认记录和未解决问题清单。价值验证比较同一批资料在原流程与辅助流程下的处理时间、漏项和返工情况，再决定是否进入 5 天 BootCamp。这里描述的是实验设计与拟交付物，尚无实际客户验收或效率提升数据。"
+        ],
+        "en": [
+          "A valuation team needs to reconcile engagement documents, asset lists, financial tables and previous working papers. The illustrative experiment focuses on completeness, consistent fields and traceable evidence. A qualified valuer selects anonymised samples and sets review criteria; the workflow does not produce autonomous valuation conclusions.",
+          "A one-day Skill Workshop builds extraction, structured fields and source-linked comparisons. A two-day, one-night Hackathon connects them into an MVP. Complete, incomplete and contradictory samples test accuracy, evidence location and exception handling. Unsupported fields stay empty; unreadable scans go to a reviewer.",
+          "Proposed deliverables include the acceptance checklist, sample register, prototype, review log and unresolved issues. Compare processing time, omissions and rework on the same samples before deciding on a five-day BootCamp. This is an experiment design, with no completed client acceptance or measured improvement claimed."
+        ]
+      },
+      "reports": []
+    }
+  ],
+  "legal": [
+    {
+      "status": "illustrative",
+      "category": {
+        "zh": "合同审阅辅助",
+        "en": "Contract review support"
+      },
+      "client": {
+        "zh": "某企业法务团队（示例）",
+        "en": "A corporate legal team (illustrative)"
+      },
+      "intro": {
+        "zh": "让合同问题被发现，也让依据能被核对。",
+        "en": "Surface contract questions and keep the evidence checkable."
+      },
+      "details": {
+        "zh": [
+          "某企业法务团队经常面对不同版本的采购合同：条款表述不一致，业务同事希望快速知道哪里需要补充说明。示例将实验聚焦在版本比对、关键条款提取和内部审阅清单，使用脱敏合同和团队已有规则作为材料。目标是帮助审阅者找到需要关注的位置，由法务人员确认解释和修改意见。",
+          "工作坊先建立业务与法务共同认可的问题清单，再在 2 天 1 夜 Hackathon 中制作带原文定位的审阅 MVP。实验分别测试付款、交付、违约、保密等条款能否被正确提取，旧版与新版变化是否被定位，未知条款是否明确标为待人工判断。每一条提示都要链接到对应合同段落，不用模型猜测缺失的事实。",
+          "示例的阶段交付是一套可演示的审阅流程、人工复核表、误报与遗漏记录，以及继续试点的条件。后续可以进入 5 天 BootCamp，将已确认的规则、访问权限与业务系统衔接。是否值得推进，要看团队对同一批样本的复核结果与返工变化；本页没有真实客户背书、已发生的验收结果或法律意见。"
+        ],
+        "en": [
+          "A corporate legal team reviews multiple versions of procurement contracts. This illustrative case focuses on change comparison, key-clause extraction and an internal review checklist using anonymised contracts and existing team rules. Legal staff remain responsible for interpretation and amendment decisions.",
+          "A two-day, one-night Hackathon creates an MVP with exact contract references. Reviewers check extraction of payment, delivery, breach and confidentiality clauses, version changes and handling of unfamiliar provisions. Each suggestion must point back to a passage; missing facts cannot be inferred.",
+          "Proposed outputs are a demonstrable workflow, human review checklist, false-positive and omission records, and conditions for a further pilot. A five-day BootCamp can validate permissions and business integration. This case has no real client endorsement, completed acceptance results or legal advice."
+        ]
+      },
+      "reports": []
+    }
+  ],
+  "education": [
+    {
+      "status": "illustrative",
+      "category": {
+        "zh": "课程设计与反馈",
+        "en": "Course preparation and feedback"
+      },
+      "client": {
+        "zh": "某职业教育机构（示例）",
+        "en": "A vocational education provider (illustrative)"
+      },
+      "intro": {
+        "zh": "围绕一个教学任务，把 AI 做成教师可用的助手。",
+        "en": "Build an assistant around one specific teaching task."
+      },
+      "details": {
+        "zh": [
+          "某职业教育机构希望教师更快整理课程材料，并针对不同学习基础的学员提供练习与反馈。示例从一门课程中的一个具体单元开始：教师提供已有教案、学习目标与公开教学资料，明确知识范围、任务难度和人工审核标准。实验关注备课与反馈环节，不自动判断学员录取、资格或学习评价。",
+          "1 天 Skill 工作坊完成资料整理、练习草案与反馈模板；2 天 1 夜 Hackathon 将这些环节组合为 MVP。教师用不同难度的样例检验内容是否符合课程目标、能否回到来源、是否需要改写。没有依据的知识点不直接进入教学；反馈先由教师审核，再以脱敏样例展示工作方式。",
+          "示例拟交付课程单元助手、教师审核记录、内容错误清单与下一轮试点方案。5 天 BootCamp 可以继续验证实际使用流程，3 个月陪跑则通过多个工作坊支持教师形成可复用的材料与协作习惯。推进依据应是教师对可用性和质量的确认；本示例没有真实学员成绩变化或已经实施的客户项目。"
+        ],
+        "en": [
+          "A vocational education provider wants to support course preparation and learning feedback. The illustrative experiment starts with one course unit, existing lesson plans and public teaching materials. Teachers define the scope, difficulty and review criteria. The assistant does not make admission, eligibility or grading decisions.",
+          "A one-day Skill Workshop creates material summaries, exercise drafts and feedback templates. A two-day, one-night Hackathon assembles an MVP. Teachers test different sample tasks for alignment, evidence and quality; unsupported content is held back and feedback is reviewed before use.",
+          "Proposed outputs are the course-unit assistant, teacher review log, content error register and pilot plan. A five-day BootCamp can test actual workflows; three months of support can help staff develop reusable practices. No student outcome improvements or implemented client project are claimed."
+        ]
+      },
+      "reports": []
+    }
+  ]
+}

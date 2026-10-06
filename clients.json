@@ -1,0 +1,93 @@
+[
+  {
+    "id": "guoyao",
+    "name": {
+      "zh": "国药数科",
+      "en": "Guoyao Shuke (国药数科)"
+    },
+    "category": {
+      "zh": "医药科技",
+      "en": "Healthcare technology"
+    },
+    "logo": "assets/photos/report-1.jpg",
+    "report": "articles.html#latest",
+    "logoCrop": {
+      "x": 54,
+      "y": 23,
+      "width": 230,
+      "height": 85,
+      "imageWidth": 1280
+    },
+    "logoSource": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA",
+    "sourcePage": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA"
+  },
+  {
+    "id": "guorun",
+    "name": {
+      "zh": "国润医疗",
+      "en": "Guorun Medical (国润医疗)"
+    },
+    "category": {
+      "zh": "医药流通",
+      "en": "Healthcare distribution"
+    },
+    "logo": null,
+    "report": "articles.html#more"
+  },
+  {
+    "id": "baoyuxin",
+    "name": {
+      "zh": "保钰鑫医疗",
+      "en": "Baoyuxin Medical (保钰鑫医疗)"
+    },
+    "category": {
+      "zh": "医药流通",
+      "en": "Healthcare distribution"
+    },
+    "logo": null,
+    "report": "articles.html#latest"
+  },
+  {
+    "id": "weigao",
+    "name": {
+      "zh": "威高骨科",
+      "en": "Weigao Orthopaedics (威高骨科)"
+    },
+    "category": {
+      "zh": "医疗器械生产企业",
+      "en": "Medical device manufacturing"
+    },
+    "logo": "assets/clients/weigao-orthopaedics.png",
+    "logoSource": "http://www.wegortho.com/templates/weigaoguke/images/logo.png",
+    "sourcePage": "http://www.wegortho.com/",
+    "report": "articles.html#devices"
+  },
+  {
+    "id": "crpcg",
+    "name": {
+      "zh": "华润医药商业",
+      "en": "CR Pharma Comm (华润医药商业)"
+    },
+    "category": {
+      "zh": "医药流通",
+      "en": "Healthcare distribution"
+    },
+    "logo": "assets/clients/crpcg.png",
+    "logoSource": "https://www.crpcg.com/dfImages/2024-05-24/887a5a8b-6096-49cd-8c9a-be3bcc750fd6.png",
+    "sourcePage": "https://www.crpcg.com/",
+    "report": null
+  },
+  {
+    "id": "jieno",
+    "name": {
+      "zh": "洁诺医疗集团",
+      "en": "Steriguard (洁诺医疗集团)"
+    },
+    "category": {
+      "zh": "医疗消毒供应",
+      "en": "Sterilisation services"
+    },
+    "logo": null,
+    "report": null
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "assets/photos/report-0.jpg",
+    "origin": "https://mp.weixin.qq.com/s/9sXiHYA2MUHRoUaYX0sVig",
+    "type": "client-report-original",
+    "note": "Downloaded unchanged from verified cover URL"
+  },
+  {
+    "asset": "assets/photos/report-1.jpg",
+    "origin": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA",
+    "type": "client-report-original",
+    "note": "Downloaded unchanged from verified cover URL"
+  },
+  {
+    "asset": "assets/photos/report-2.jpg",
+    "origin": "https://mp.weixin.qq.com/s/GgHDOQt_YVDSgZvSWqgTLw",
+    "type": "client-report-original",
+    "note": "Downloaded unchanged from verified cover URL"
+  },
+  {
+    "asset": "assets/photos/report-3.jpg",
+    "origin": "https://mp.weixin.qq.com/s/374S4isQLwPalh2OnxY1Sw",
+    "type": "client-report-original",
+    "note": "Downloaded unchanged from verified cover URL"
+  },
+  {
+    "asset": "assets/photos/weigao-workshop-1.webp",
+    "origin": "https://mp.weixin.qq.com/s/hWMghHyjpZTebNYzIYsywA",
+    "type": "client-report-original",
+    "note": "Copied unchanged from user-provided saved webpage; local source independently readable."
+  },
+  {
+    "asset": "assets/photos/weigao-workshop-2.webp",
+    "origin": "https://mmecoa.qpic.cn/sz_mmecoa_png/6bhDubqjPduotGgWVuCkkHBnXDWXe6ysY2BfhtuibMXwpHKqzpbmnpQHO0vAibaETdKttlVlUsiceI27mrLlE0qyWwpykW3iaKW4396ZCyyQSrk/640?wx_fmt=png&from=appmsg#imgIndex=2",
+    "type": "client-report-original"
+  },
+  {
+    "asset": "assets/photos/weigao-workshop-3.webp",
+    "origin": "https://mmecoa.qpic.cn/mmecoa_png/6bhDubqjPduER5fB7SHDldfnTZlMMNMjvv7PopDECBP5gzJ6xCbbjBe2sHgjCIjp2pLIKWicDXv4416t0ZZoJ0nJyPWb0DygicYIKic7nZMxXQ/640?wx_fmt=png&from=appmsg#imgIndex=3",
+    "type": "client-report-original"
+  }
+]

@@ -1,0 +1,132 @@
+[
+  {
+    "url": "https://mp.weixin.qq.com/s/9sXiHYA2MUHRoUaYX0sVig",
+    "status": "verified",
+    "httpStatus": 200,
+    "title": "从学习到实战｜保钰鑫医疗AI赋能工作坊圆满结业，助力医疗供应链数智升级",
+    "source": "保钰鑫医疗",
+    "published": "2026-09-15",
+    "publishedAt": "2026-09-15 13:31",
+    "publishedTimezone": "Asia/Shanghai",
+    "publishedTimestamp": 1789450307,
+    "description": "报道保钰鑫医疗两天一夜的AI工作坊，学员围绕供应链、岗位工作与个人兴趣完成42个作品。",
+    "coverUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/uhiaxqcq1wgvUBw6D6opYSOY2vs5gCOJxkpByUh3PYFovMblFaKtzeKfeV5ibnye4z1SlFpyP5UyTbye82H9JkwCPAYcqZHgnhoia7YM3viba98/0?wx_fmt=jpeg",
+    "association": {
+      "labNameExplicitlyMentioned": false,
+      "shortEvidence": [
+        "跟随无境创新AI导师刘杰、念念"
+      ],
+      "verificationNote": "文章明确提到无境创新导师；未直接提及“杰哥 AI 实验室”，应保留原报道机构名称。"
+    },
+    "relatedArticleCandidates": [],
+    "relatedArticleNote": "正文可见链接中未发现可据以扩展的相关AI工作坊报道。",
+    "metadataEvidence": [
+      "HTML og:title",
+      "文章可见公众号名称 js_name",
+      "原文 createTime 与 ct 发布时间字段",
+      "正文 js_content"
+    ],
+    "pageCodeExecuted": false,
+    "localCover": "assets/photos/report-0.jpg"
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA",
+    "status": "verified",
+    "httpStatus": 200,
+    "title": "同上一堂AI课：国药数科AI创新工作坊开启协同共创新实践",
+    "source": "国药数科",
+    "published": "2026-09-01",
+    "publishedAt": "2026-09-01 09:00",
+    "publishedTimezone": "Asia/Shanghai",
+    "publishedTimestamp": 1788224400,
+    "description": "报道国药数科第三期AI创新工作坊，以跨部门、跨企业共学共创推进场景探索与阶段成果。",
+    "coverUrl": "https://mmbiz.qpic.cn/mmbiz_jpg/6X1FM21v73KMCRHlKQJMxvJQOq3eEQPZENhj91YOT5wick06ElyLVLgN8wvMcERAMd2Cibsg2f55UJ2ERLCLtPSia2q5tSaKM8xmbuZfCn9D6E/0?wx_fmt=jpeg",
+    "association": {
+      "labNameExplicitlyMentioned": false,
+      "shortEvidence": [],
+      "verificationNote": "文章介绍客户AI工作坊；正文未直接提及杰哥AI实验室、杰哥、刘杰或无境创新。关联来自用户提供，不能宣称原文明确署名实验室。"
+    },
+    "relatedArticleCandidates": [],
+    "relatedArticleNote": "正文可见链接中未发现可据以扩展的相关AI工作坊报道。",
+    "metadataEvidence": [
+      "HTML og:title",
+      "文章可见公众号名称 js_name",
+      "原文 createTime 与 ct 发布时间字段",
+      "正文 js_content"
+    ],
+    "pageCodeExecuted": false,
+    "localCover": "assets/photos/report-1.jpg"
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/GgHDOQt_YVDSgZvSWqgTLw",
+    "status": "verified",
+    "httpStatus": 200,
+    "title": "国药数科举办AI创新工作坊 探索人工智能与业务融合路径",
+    "source": "国药数科",
+    "published": "2026-08-11",
+    "publishedAt": "2026-08-11 16:15",
+    "publishedTimezone": "Asia/Shanghai",
+    "publishedTimestamp": 1786436118,
+    "description": "报道国药数科多条业务线的两天一晚工作坊，涵盖认知、体验、创作与路演，探索AI与实际业务的融合。",
+    "coverUrl": "https://mmbiz.qpic.cn/sz_mmbiz_jpg/6X1FM21v73IB9YamIzP8IuqFY8MWhxQwjiaZ6Fvs1oUOwcFswicEB27ia6nCRfIPJJic4XQRK51iazowkdGOpp9O2XpiaTFZrkKrHGT6oKjqLmNicQ/0?wx_fmt=jpeg",
+    "association": {
+      "labNameExplicitlyMentioned": false,
+      "shortEvidence": [],
+      "verificationNote": "文章介绍客户AI工作坊；正文未直接提及杰哥AI实验室、杰哥、刘杰或无境创新。关联来自用户提供，不能宣称原文明确署名实验室。"
+    },
+    "relatedArticleCandidates": [],
+    "relatedArticleNote": "正文可见链接中未发现可据以扩展的相关AI工作坊报道。",
+    "metadataEvidence": [
+      "HTML og:title",
+      "文章可见公众号名称 js_name",
+      "原文 createTime 与 ct 发布时间字段",
+      "正文 js_content"
+    ],
+    "pageCodeExecuted": false,
+    "localCover": "assets/photos/report-2.jpg"
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/374S4isQLwPalh2OnxY1Sw",
+    "status": "verified",
+    "httpStatus": 200,
+    "title": "拥抱AI浪潮 激活发展动能——国润医疗组织开展中高层“AI赋能工作坊”专项培训",
+    "source": "国润医疗",
+    "published": "2026-07-07",
+    "publishedAt": "2026-07-07 18:23",
+    "publishedTimezone": "Asia/Shanghai",
+    "publishedTimestamp": 1783419810,
+    "description": "报道国润医疗41名中高层管理者参加AI赋能培训，通过业务议题共创、个人及团队作品路演推进实战。",
+    "coverUrl": "http://mmecoa.qpic.cn/sz_mmecoa_jpg/PEeNuSWrJxPfiaqr4I7xR2Kt2kJQnJNWFn5fSOnJZUNUWo2vXun21AJAn3ZgaD9elsJ5FtlHCW3Wcs86bJX5jIX2kZzbicvzl2hRiadgCYv7uE/0?wx_fmt=jpeg",
+    "association": {
+      "labNameExplicitlyMentioned": false,
+      "shortEvidence": [
+        "特邀无境创新团队导师授课"
+      ],
+      "verificationNote": "文章明确提到无境创新导师；未直接提及“杰哥 AI 实验室”，应保留原报道机构名称。"
+    },
+    "relatedArticleCandidates": [],
+    "relatedArticleNote": "正文可见链接中未发现可据以扩展的相关AI工作坊报道。",
+    "metadataEvidence": [
+      "HTML og:title",
+      "文章可见公众号名称 js_name",
+      "原文 createTime 与 ct 发布时间字段",
+      "正文 js_content"
+    ],
+    "pageCodeExecuted": false,
+    "localCover": "assets/photos/report-3.jpg"
+  },
+  {
+    "url": "https://mp.weixin.qq.com/s/hWMghHyjpZTebNYzIYsywA",
+    "status": "verified-local",
+    "title": "威高骨科 2 天产出 39 件 AI 业务成果，把培训推进到经营动作",
+    "source": "无境创新",
+    "published": "2026-08-12",
+    "description": "25 名中高层与骨干，覆盖 9 个部门；2 天完成 39 件作品，21 件进入业务成果池，8 件列为优先继续推进成果。",
+    "coverUrl": null,
+    "association": {
+      "labNameExplicitlyMentioned": true,
+      "verificationNote": "从用户保存的本地网页核验。原文明确提及无境创新、威高骨科与杰哥 AI 实验室；成果为工作坊产物与后续试点建议，不等于全部产品已部署。"
+    },
+    "localCover": "assets/photos/weigao-workshop-1.webp"
+  }
+]

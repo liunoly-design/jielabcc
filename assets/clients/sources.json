@@ -1,0 +1,37 @@
+{
+  "clients": [
+    {
+      "id": "guoyao",
+      "sourcePage": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA",
+      "asset": "assets/photos/report-1.jpg",
+      "logoSource": "https://mp.weixin.qq.com/s/TRtiaNaoEQAKg3wKuUkNLA",
+      "displayCrop": {
+        "x": 54,
+        "y": 23,
+        "width": 230,
+        "height": 85,
+        "imageWidth": 1280
+      }
+    },
+    {
+      "id": "weigao",
+      "sourcePage": "http://www.wegortho.com/",
+      "asset": "assets/clients/weigao-orthopaedics.png",
+      "logoSource": "http://www.wegortho.com/templates/weigaoguke/images/logo.png",
+      "displayCrop": null
+    },
+    {
+      "id": "crpcg",
+      "sourcePage": "https://www.crpcg.com/",
+      "asset": "assets/clients/crpcg.png",
+      "logoSource": "https://www.crpcg.com/dfImages/2024-05-24/887a5a8b-6096-49cd-8c9a-be3bcc750fd6.png",
+      "displayCrop": null
+    }
+  ],
+  "pending": [
+    "国润医疗",
+    "保钰鑫医疗",
+    "洁诺医疗集团"
+  ],
+  "excluded": "Parent-group substitutions, unrelated names, default recruitment placeholders and generated logos."
+}
