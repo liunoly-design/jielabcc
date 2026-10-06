@@ -109,7 +109,7 @@ python3 -m json.tool locales-en.json > /dev/null
 python3 -m json.tool consultation-config.json > /dev/null
 ```
 
-2026-10-06 已将 `consultation-config.json` 接入公开飞书合作需求表单。首页按钮直接打开表单，提交内容保存至仅协作者可访问的内部多维表格。公开工作坊与合作说明为 https://ncno2l9v0rt4.feishu.cn/docx/MkUedItipoYA1AxOsDqcppvbnKe 。新需求提醒和跟进日期提醒由飞书表格自动化处理，接收人为刘杰；不使用邮件通知。网站仓库不包含内部底表链接、客户提交内容或飞书凭据。
+2026-10-07 已将 `consultation-config.json` 的 `url` / `url_en` 分别接入公开的中文 / 英文飞书合作需求表单。中英文首页的咨询按钮打开对应语言的表单，访客无需登录即可填写；提交内容保存至同一内部多维表格的中文 / 英文需求表，仅协作者可访问。工作坊选项支持多选：半天、1 天、2 天、5 天、陪跑，英文版使用对应英文选项。公开工作坊与合作说明为 https://ncno2l9v0rt4.feishu.cn/docx/MkUedItipoYA1AxOsDqcppvbnKe 。中英文需求各自的新需求提醒和跟进日期提醒由飞书表格自动化处理，接收人为刘杰；不使用邮件通知。网站仓库不包含内部底表链接、客户提交内容或飞书凭据。
 
 GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书合作需求表单已接入。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
 

@@ -88,6 +88,10 @@ for page in ('index.html','cases.html','case.html','articles.html','clients.html
  en=en.replace('aria-label="English version"','aria-label="中文版"').replace('hreflang="zh-CN" lang="en"','hreflang="zh-CN" lang="zh-CN"')
  if page=='index.html':
   en=re.sub(r'<h1>.*?</h1>','<h1>See the value of AI<br>for your business<br>in <span class="hero-value">1–5 days.</span></h1>',en,count=1)
+  en_url=CONSULTATION.get('url_en',url).strip()
+  if url and en_url:
+   if urlsplit(en_url).scheme!='https' or not urlsplit(en_url).netloc: raise ValueError('English consultation URL must be a complete HTTPS URL.')
+   en=en.replace('href="'+escape(url,quote=True)+'"','href="'+escape(en_url,quote=True)+'"')
  (ROOT/'en'/page).write_text(en)
 for article,title in zip(ARTICLES,TITLE_EN): article['titleEn']=title
 (ROOT/'case-data.js').write_text('window.LAB_CASES='+json.dumps(CASES,ensure_ascii=False)+';\nwindow.LAB_ARTICLES='+json.dumps(ARTICLES,ensure_ascii=False)+';\nwindow.LAB_CLIENTS='+json.dumps(CLIENTS,ensure_ascii=False)+';\n')

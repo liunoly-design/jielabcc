@@ -63,8 +63,10 @@ robots=(ROOT/'robots.txt').read_text();assert 'Disallow: /admin/' in robots and 
 before={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 subprocess.run(['python3','scripts/build_locales.py'],cwd=ROOT,check=True)
 assert before=={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in files},'Build is not reproducible'
-consultation_url=json.loads((ROOT/'consultation-config.json').read_text()).get('url','').strip()
+consultation_config=json.loads((ROOT/'consultation-config.json').read_text())
 for homepage in (ROOT/'index.html',ROOT/'en/index.html'):
+ consultation_url=consultation_config.get('url_en',consultation_config.get('url','')) if homepage.parent.name=='en' else consultation_config.get('url','')
+ consultation_url=consultation_url.strip()
  actions=parsed[homepage].consultation
  assert len(actions)==1,(homepage,'consultation action')
  tag,attrs=actions[0]
