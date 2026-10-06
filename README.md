@@ -109,9 +109,9 @@ python3 -m json.tool locales-en.json > /dev/null
 python3 -m json.tool consultation-config.json > /dev/null
 ```
 
-当前合作登记 URL 故意留空，按钮 disabled，没有飞书提交、邮件、存储或通知后台。取得真实 HTTPS URL 后写入 `consultation-config.json` 并构建；格式校验不验证飞书域名、权限、可访问性或保存/通知结果。
+2026-10-06 已将 `consultation-config.json` 接入公开飞书合作需求表单。首页按钮直接打开表单，提交内容保存至仅协作者可访问的内部多维表格。公开工作坊与合作说明为 https://ncno2l9v0rt4.feishu.cn/docx/MkUedItipoYA1AxOsDqcppvbnKe 。新需求提醒和跟进日期提醒由飞书表格自动化处理，接收人为刘杰；不使用邮件通知。网站仓库不包含内部底表链接、客户提交内容或飞书凭据。
 
-GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书服务接入仍待真实链接。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
+GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书合作需求表单已接入。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
 
 
 ## SEO 与生成式搜索维护（2026-10-06）
@@ -136,7 +136,7 @@ node --check case-data.js
 
 本机 Nginx 配置位于上层项目，本轮已备份后给管理代理及 JSON/Markdown/Python 维护文件增加 X-Robots-Tag: noindex, nofollow；管理页面与代理地址未改，隐藏路径继续 404。该配置不在本静态 Git 仓库中，新部署需继承此索引保护。备份、检查记录和浏览器截图位于上层项目 `backups/seo-20261006/` 与 `.impeccable/review/seo-20261006/`，不随站点公开发布。
 
-后续由站点所有者登录并真实验证 Google Search Console、Bing Webmaster Tools、百度搜索资源平台，提交 `https://www.jielab.cc/sitemap.xml`（百度按已验证后台实际提供的提交入口），检查重要页面抓取/索引与 AI 可见性报告。没有执行所有权验证或平台提交，也没有创建虚假验证文件。Cloudflare 需登录后另行配置裸域入口及到 www 的重定向；当前所有规范 URL 仅使用已上线的 www 域名。合作登记仍待真实飞书 HTTPS 链接。
+后续由站点所有者登录并真实验证 Google Search Console、Bing Webmaster Tools、百度搜索资源平台，提交 `https://www.jielab.cc/sitemap.xml`（百度按已验证后台实际提供的提交入口），检查重要页面抓取/索引与 AI 可见性报告。没有执行所有权验证或平台提交，也没有创建虚假验证文件。Cloudflare 需登录后另行配置裸域入口及到 www 的重定向；当前所有规范 URL 仅使用已上线的 www 域名。合作登记已接入真实飞书表单，内部需求数据不对外公开。
 
 本轮查阅的官方依据：
 

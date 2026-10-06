@@ -68,7 +68,8 @@ for page in ('index.html','cases.html','case.html','articles.html','clients.html
   else:
    action='<button class="button" data-consultation disabled>填写合作需求 '+ARROW+'</button>'
    status='合作登记入口即将开放。'
-  s=re.sub(r'<(?:button|a)[^>]*data-consultation(?:\s|>).*?</(?:button|a)>',lambda m:action,s,count=1)
+  s,n=re.subn(r'<(?:button|a)\b[^>]*\bdata-consultation(?:=(?:"[^"]*"|\x27[^\x27]*\x27))?(?:\s|>).*?</(?:button|a)>',lambda m:action,s,count=1,flags=re.S)
+  if n!=1: raise ValueError('Expected one consultation action in the homepage.')
   s=re.sub(r'(<p[^>]*data-consultation-status[^>]*>).*?(</p>)',lambda m:m[1]+status+m[2],s,count=1)
   s=re.sub(r'(<div class="case-links" id="case-links">|<div id="case-links" class="case-links">).*?(</div>)',lambda m:m[1]+case_links('pharma')+m[2],s,count=1)
  if page=='cases.html':

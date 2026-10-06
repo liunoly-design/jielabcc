@@ -7,9 +7,10 @@ import json,re,hashlib,subprocess
 ROOT=Path(__file__).resolve().parents[1];BASE='https://www.jielab.cc/'
 class Page(HTMLParser):
  def __init__(self,s):
-  super().__init__();self.links=[];self.meta={};self.canonical=[];self.alternates={};self.ids=set();self.lang=None;self.h1=0;self.feed(s)
+  super().__init__();self.links=[];self.meta={};self.canonical=[];self.alternates={};self.ids=set();self.lang=None;self.h1=0;self.consultation=[];self.feed(s)
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
+  if 'data-consultation' in a:self.consultation.append((tag,a))
   if tag=='html':self.lang=a.get('lang')
   if tag=='h1':self.h1+=1
   if a.get('id'):self.ids.add(a['id'])
@@ -62,5 +63,13 @@ robots=(ROOT/'robots.txt').read_text();assert 'Disallow: /admin/' in robots and 
 before={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 subprocess.run(['python3','scripts/build_locales.py'],cwd=ROOT,check=True)
 assert before=={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in files},'Build is not reproducible'
-assert re.search(r'<button(?=[^>]*data-consultation)(?=[^>]*disabled)[^>]*>', (ROOT/'index.html').read_text())
+consultation_url=json.loads((ROOT/'consultation-config.json').read_text()).get('url','').strip()
+for homepage in (ROOT/'index.html',ROOT/'en/index.html'):
+ actions=parsed[homepage].consultation
+ assert len(actions)==1,(homepage,'consultation action')
+ tag,attrs=actions[0]
+ if consultation_url:
+  assert tag=='a' and attrs.get('href')==consultation_url and 'disabled' not in attrs,(homepage,'consultation link')
+  assert attrs.get('target')=='_blank' and {'noopener','noreferrer'}<=set(attrs.get('rel','').split()),(homepage,'external link')
+ else:assert tag=='button' and 'disabled' in attrs,(homepage,'unconfigured consultation')
 print(f'PASS: {len(files)} pages, {len(public)} sitemap URLs, {structured} JSON-LD graphs; links, fragments, reciprocal locales, noindex and repeat build checked.')

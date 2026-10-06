@@ -194,7 +194,7 @@
   "允许失败，也认真确认每一步。": "Room to fail. Evidence at every step.",
   "方法论：问题明确、实验有据、成果可用。每一步都留下可确认的成果。": "Methodology: define the problem, gather evidence and make results useful. Confirm an outcome at every stage.",
   "AI 生成方法论图": "AI-generated methodology diagram",
-  "前往飞书填写需求。": "Share your needs in the Feishu document.",
+  "前往飞书填写需求。": "Share your needs through the Feishu form.",
   "合作客户 · 杰哥 AI 实验室": "Clients · Jie's AI Lab",
   "合作客户": "Clients",
   "一起实验，": "Experiment together.",
@@ -342,5 +342,6 @@
   "服务与行业入口": "Services and industries",
   "选择合适的服务形式": "Choose a service format",
   "常见问题": "Common questions",
-  "查看合作咨询与登记状态": "View consultation and registration status"
+  "查看合作咨询与登记状态": "View consultation and registration status",
+  "请先整理业务问题、参与部门、可用的脱敏材料和希望验证的目标，再通过首页合作咨询进入飞书表单登记。需求会保存到内部表格，由团队跟进。": "Prepare your business question, participating departments, available anonymised materials and validation goals, then open the Feishu enquiry form from the homepage consultation section. Your request is saved in a restricted table for the team to follow up."
 }
