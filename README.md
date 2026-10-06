@@ -32,6 +32,8 @@ python3 -m http.server 8765 --directory design/site
 
 六家合作客户为国药数科、国润医疗、保钰鑫医疗、威高骨科、华润医药商业（CR Pharma Comm）、洁诺医疗集团（Steriguard），关系来自用户指定。当前有三份原始标志，三家仍缺原稿，页面保留诚实的名称占位与待整理说明。
 
+首页团队区列出杰哥、念念老师、Lily 老师、老田、罗伯特牛仔五名成员，每人有角色与 1–2 句介绍。英文对应 Jie、Niannian、Lily、Lao Tian、Robert Cowboy；简介按用户提供的经历及分工整理。
+
 ## 内容与双语维护
 
 | 文件 | 用途 |
@@ -66,13 +68,17 @@ python3 scripts/update_fonts.py
 
 真实客户图片均为本地原图，记录在 `assets/photos/sources.json`：四篇报道封面和三张威高工作坊现场图片。理念与威高详情显示威高照片，团队区使用保钰鑫实际工作坊合影并显示来源；它不是实验室员工编制合影。缺图时保留明确不可用状态，不用合成场景当现场证据。
 
+团队头像显示框统一为 76 × 76px、4px 圆角、`object-fit:cover` 与 `object-position:50% 20%`。杰哥使用现有 `assets/founder.png` 原始 VI 形象；念念老师、Lily 老师、老田、罗伯特牛仔尚未提供真实头像，当前用姓名或字母占位，带头像待补的 `aria-label` 和列表下方可见说明。本轮未生成新的栅格图。具名成员网格桌面三栏、850px 以下两栏、650px 以下单栏；旧三个泛化角色已从页面移除，旧 `.people` CSS 仍存在。
+
+替换头像时，将中文 `index.html` 中对应的 `.member-avatar.avatar-pending` div 换为 `<img class="member-avatar" src="本地原图路径" alt="人物描述">`，去掉 `avatar-pending`，补充原图宽高与加载属性；保留统一头像框及裁切规则。按实际待补名单更新 `.team-photo-note`，全部补齐后再移除说明。同步 `locales-en.json` 的新文案和 alt，再运行双语构建与字体更新，不直接手改英文生成页。
+
 首屏已恢复原来的细蓝色回环方法路径：内联 SVG 显示“痛点挖掘 / 实验验证 / 价值实现”，英文为“Discover pain points / Validate experiments / Realise value”，使用 `role=img` 与对应语言的 `aria-label`。既有黄猫 `assets/cat-v2.png` 保持原样。废弃雕塑概念图及其 prompt 已移除，本轮未生成新的栅格图。方法图为 `methodology-zh.png` 与 `methodology-en.png`，caption 在图下方显示“问题 · 实验 · 价值 / Problem · Experiment · Value”，不显示 AI 生成标签；生成来源与 prompt 保留在 `assets/GENERATED-IMAGES.json` 及对应 `.prompt.txt`。这些图表达品牌与方法，不能作客户事件照片或项目成果凭证。
 
 ## 字体与交互
 
 中文字体 `LabChinese` 来源为 Noto Sans SC，与思源黑体同源；英文与数字 `LabLatin` 来源为 Inter。两者自托管 400、500、600、700、800 真实字重，使用 `font-display:swap` 和 `font-synthesis:none`。许可证在 `assets/Noto-OFL.txt` 与 `assets/Inter-OFL.txt`。
 
-`scripts/update_fonts.py` 递归扫描 HTML 及 `app.js`、`cases.json`、`clients.json`，通过 Google Fonts 更新字形子集与 `fonts.css`，执行需要网络。新增文字后核对字形，单独修改 `articles.json` 未必纳入字体集合，须同步实际页面。
+`scripts/update_fonts.py` 递归扫描 HTML 及 `app.js`、`cases.json`、`clients.json`，通过 Google Fonts 更新字形子集与 `fonts.css`，执行需要网络。团队简介更新后已重建至 706 字形。新增文字后核对字形，单独修改 `articles.json` 未必纳入字体集合，须同步实际页面。
 
 实际断点为 1200、980、850、650px；980px 以下折叠导航，650px 以下堆叠主要内容。容器最大 1400px，边距依次 68、48、32、20px。页面采用原生滚动与 proximity scroll snap，不劫持滚轮、不保证每次整屏停靠；长内容自然增高，详情自然滚动。减少动态模式关闭平滑滚动、动画、过渡和停靠。
 
@@ -81,6 +87,8 @@ python3 scripts/update_fonts.py
 双语首屏共用 `minmax(0,1fr) 32%` 网格与 45px 间距，850px 以下为 33% 与 25px，650px 以下堆叠。方法路径容器桌面 340 × 420px，移动 260 × 315px，最大宽度 100%。英文桌面工作坊仍保留既有列宽规则；既定 VI 与基础 token 保持原样。
 
 ## 验证与交付边界
+
+2026-10-06 团队扩展记录为原项目 `.impeccable/review/team-members-{zh,en}-{desktop,mobile}.png` 与 `team-members-zh-tablet.png`，共五张完整 `#team` 区域截图，并非全站截图；捕获视口分别为 1101 × 876、768 × 900、390 × 844。实施方在各捕获状态测得无横向溢出，均为五个姓名及五个头像框。静态 detector 记录 16 项警告（8 项 padding、5 项 contrast、1 项 tiny-text、2 项 leading）。独立评审已完成，报告为原项目 `team-members-finish-review.md`，结论为 **Ship — scoped pass for the bilingual named profiles and truthful pending-portrait state**。评审逐张检查五张截图与当前源码，未操作浏览器，未发现需要修复、重截图或重建的实质缺陷；成员经历来自用户，未独立认证。该结论仅覆盖这些团队区域，不认证英文平板、全站、完整无障碍或部署，也不表示四位实际头像已交付。此前首屏恢复结论仍保留其原有范围；这些评审资料不在本静态仓库内。
 
 2026-10-06 首屏恢复后的独立 finish review 已完成，结论为 **Ship — scoped pass for the restored bilingual homepage hero**，报告为原项目 `.impeccable/review/hero-restored-finish-review.md`。评审逐张打开截图及视觉参考，未操作浏览器；结论仅覆盖本轮双语首屏恢复和两种视口，不认证全站或中间宽度。静态 detector 记录18项警告（8项 padding、5项 contrast、1项 tiny-text、4项 leading），评审未发现这些构成本轮恢复图解的实质缺陷。本轮中文与英文桌面（1101 × 876）及移动（390 × 844）四张截图为 `hero-restored-{zh,en}-{desktop,mobile}.png`；实施方测量这些首页无横向溢出或未加载图片，桌面/移动可见边距为 48/20px。上述评审资料不在本静态仓库内。此前 `oct6-finish-review.md` 的 **Ship — scoped pass for the current static prototype and truthful asset state** 是当时静态原型与素材状态的限定结论，不作为本轮首屏恢复的评审结论。
 
