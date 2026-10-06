@@ -1,0 +1,12 @@
+{
+  "name": "jielabcc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build_locales.py && python3 scripts/check_seo.py && python3 scripts/package_site.py",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.147.0"
+  }
+}
