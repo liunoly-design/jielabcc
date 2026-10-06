@@ -3,68 +3,68 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/lab-chinese-0.ttf) format('truetype');
+  src: url(assets/lab-chinese-0.ttf?v=4d3ddb7e14fa) format('truetype');
 }
 @font-face {
   font-family: 'LabChinese';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/lab-chinese-1.ttf) format('truetype');
+  src: url(assets/lab-chinese-1.ttf?v=a0a9883ecf42) format('truetype');
 }
 @font-face {
   font-family: 'LabChinese';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/lab-chinese-2.ttf) format('truetype');
+  src: url(assets/lab-chinese-2.ttf?v=85b207cdabac) format('truetype');
 }
 @font-face {
   font-family: 'LabChinese';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/lab-chinese-3.ttf) format('truetype');
+  src: url(assets/lab-chinese-3.ttf?v=3d8c1a6152b4) format('truetype');
 }
 @font-face {
   font-family: 'LabChinese';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(assets/lab-chinese-4.ttf) format('truetype');
+  src: url(assets/lab-chinese-4.ttf?v=0605dc83ff29) format('truetype');
 }
 @font-face {
   font-family: 'LabLatin';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/lab-inter-0.ttf) format('truetype');
+  src: url(assets/lab-inter-0.ttf?v=8ed49d48a950) format('truetype');
 }
 @font-face {
   font-family: 'LabLatin';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/lab-inter-1.ttf) format('truetype');
+  src: url(assets/lab-inter-1.ttf?v=c4259e0daec1) format('truetype');
 }
 @font-face {
   font-family: 'LabLatin';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/lab-inter-2.ttf) format('truetype');
+  src: url(assets/lab-inter-2.ttf?v=f4cefd69e854) format('truetype');
 }
 @font-face {
   font-family: 'LabLatin';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/lab-inter-3.ttf) format('truetype');
+  src: url(assets/lab-inter-3.ttf?v=9c4b57f5d114) format('truetype');
 }
 @font-face {
   font-family: 'LabLatin';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url(assets/lab-inter-4.ttf) format('truetype');
+  src: url(assets/lab-inter-4.ttf?v=7f566e7dbd94) format('truetype');
 }

@@ -22,11 +22,11 @@ python3 -m http.server 8765 --directory design/site
 
 ## 当前内容
 
-五种页面各有中文与英文版本，共十个 HTML：`index.html` 首页、`cases.html` 行业索引、`case.html` 查询参数详情模板、`articles.html` 客户报道、`clients.html` 合作客户。全站导航提供工作坊、行业案例、客户报道、合作客户、团队、合作咨询六个目的地。语言切换保留当前页面、查询参数与 hash；首页行业标签状态未写入地址，不能保证切换语言后保留其临时选择。
+基础五种页面各有中文与英文版本：`index.html` 首页、`cases.html` 行业索引、`case.html` 查询参数详情模板、`articles.html` 客户报道、`clients.html` 合作客户。全站导航提供工作坊、行业案例、客户报道、合作客户、团队、合作咨询六个目的地。语言切换保留当前页面、查询参数与 hash；首页行业标签状态未写入地址，不能保证切换语言后保留其临时选择。
 
 工作坊五项产品是半天沙龙、1 天 Skill 工作坊、2 天 1 夜 Hackathon、5 天 BootCamp、3 个月组织陪跑。BootCamp 成果支持继续推进部署与使用，阶段验收目标在开营前共同确定。
 
-医药案例分为医药流通（国润医疗、保钰鑫医疗）、医药科技（国药数科）、医疗器械生产企业（威高骨科）。资产评估、法律、教育各有一个明确披露的实验示例，展示问题、实验与拟交付物，非已实施客户项目；各行业第 2、3 入口显示资料待整理。详情由共享模板与数据生成，不代表十二个已完成客户项目。
+医药案例分为医药流通（国润医疗、保钰鑫医疗）、医药科技（国药数科）、医疗器械生产企业（威高骨科）。资产评估、法律、教育各有一个明确披露的实验示例，展示问题、实验与拟交付物，非已实施客户项目；各行业第 2、3 入口显示资料待整理。有材料的六个案例由共享模板与数据生成独立静态详情（其中三个为实验示例），不代表十二个已完成客户项目。旧查询参数入口保留，并跳转到对应静态页；待整理入口仍无成果主张。加上三个行业/服务入口，现共 28 个双语 HTML。
 
 客户报道现为五篇唯一原文入口；未知 I83 条目已删除。威高报道由用户保存的本地原文核验，发布日期 2026-08-12，工作坊日期为 2026-08-07 至 08-08：25 人、9 部门、39 件作品、21 件进入业务成果池、8 件优先继续推进，原文建议后续继续试点 2–3 个场景。这些是工作坊产物与后续建议，不等于全部已投产。数据保留原文机构名称及关联证据边界；英文标题为编辑翻译，页面保留中文原题。
 
@@ -42,7 +42,10 @@ python3 -m http.server 8765 --directory design/site
 | `cases.json` | 双语案例；`illustrative` 披露、正文、原图与报道索引 |
 | `articles.json` | 报道原标题、日期、来源、核验状态、原文 URL、本地图片及关联说明 |
 | `clients.json` | 双语客户分类、真实 Logo 路径、报道路径、国药裁切参数 |
-| `locales-en.json` | 中文静态文案对应英文翻译 |
+| `locales-en.json` | 中文静态文案对应英文翻译，含 SEO 内容一致性校验 |
+| `seo-content.json` | 双语服务入口、FAQ、组织说明与基础页搜索元信息 |
+| `scripts/build_seo.py` | 由语言构建器调用，生成静态案例、服务入口、元信息、结构化数据与 sitemap |
+| `scripts/check_seo.py` | 校验本地链接、语言互指、索引边界、JSON-LD 和重复构建 |
 | `consultation-config.json` | 后续真实合作登记 HTTPS URL |
 | `scripts/build_locales.py` | 生成英文 HTML 与 `case-data.js`，维护报道标题 `TITLE_EN` |
 | `app.js` / `style.css` | 共享交互与响应式外观 |
@@ -109,3 +112,39 @@ python3 -m json.tool consultation-config.json > /dev/null
 当前合作登记 URL 故意留空，按钮 disabled，没有飞书提交、邮件、存储或通知后台。取得真实 HTTPS URL 后写入 `consultation-config.json` 并构建；格式校验不验证飞书域名、权限、可访问性或保存/通知结果。
 
 GitHub 静态托管或 Cloudflare Pages 上传已提交的本目录 HTML、CSS、JS 和资源不需要构建命令。修改源内容时先本地运行上述语言/字体脚本再提交生成文件。当前本机 Nginx 将本目录只读挂载为网站根目录，端口为 8080，Cloudflare Tunnel 的 `www.jielab.cc` 入口指向 `http://jie_ai_lab:80`；`/admin/` 管理入口保留。2026-10-06 已验证公网新版首页，本机十项页面及资源与本目录文件一致，隐藏文件访问返回 404。基础设施配置与旧站回退备份位于上层项目，不在本公开仓库中。不带 `www` 的 `jielab.cc` 入口尚未配置；飞书服务接入仍待真实链接。限定设计评审不证明外部原文可访问、持续生产运行、全面无障碍认证、素材许可或三份缺失 Logo 已补齐。
+
+
+## SEO 与生成式搜索维护（2026-10-06）
+
+搜索入口为 `medical-device-ai.html`（医疗器械 AI 解决方案）、`pharma-ai.html`（医药 AI 解决方案、医药 AI 工作坊）、`ai-training.html`（AI 培训、企业 AI 培训），英文位于同名 `en/` 路径。页面解释组织身份、适用业务问题、五种服务、交付条件与 FAQ，保留真实来源及阶段事实边界；不保证搜索排名、收录或 AI 引用。
+
+`case-pharma-{1,2,3}.html` 提供医药流通、国药数科与威高骨科的静态可读记录；其他三个静态详情明确为实验示例。旧 `case.html?industry=...&case=...` 在浏览器跳转到已整理的详情，采用 noindex，不能当成服务端 301。示例也使用 noindex，排除在 sitemap 外。静态详情无需 JavaScript 获取正文、照片与原文来源。原有团队、品牌 VI、登记禁用状态与菜单/语言切换保留。
+
+20 个正式中英文 URL 具有各自 title/description、canonical、互指 zh-CN/en/x-default、Open Graph 与 Twitter 分享信息；sitemap 只列公开正式内容。JSON-LD 使用 Organization、WebPage、Service 与 BreadcrumbList，案例引用真实原文；不写虚构评价、评级或医学资质，也不申报 FAQ 富结果。robots 排除管理、Git 及维护资料；robots 是抓取指令，不是身份认证。
+
+中文基础 HTML 修改仍需同步 `locales-en.json`。新增服务文案维护 `seo-content.json` 的 zh/en 和词典，构建会检查一致性。案例正文继续以 `cases.json` 为来源，原文标题与机构边界来自 `articles.json`。不要手改任何生成英文、独立案例或服务 HTML。运行：
+
+```sh
+python3 scripts/build_locales.py
+python3 scripts/update_fonts.py
+python3 scripts/check_seo.py
+node --check app.js
+node --check case-data.js
+```
+
+字体脚本结束后自动刷新页面的资源内容版本号。样式、脚本和字体带内容 hash 查询参数，避免旧浏览器缓存影响更新；页面 canonical 不含版本参数。生成器不自动添加 sitemap lastmod，避免把纯构建时间写成内容更新时间。
+
+本机 Nginx 配置位于上层项目，本轮已备份后给管理代理及 JSON/Markdown/Python 维护文件增加 X-Robots-Tag: noindex, nofollow；管理页面与代理地址未改，隐藏路径继续 404。该配置不在本静态 Git 仓库中，新部署需继承此索引保护。备份、检查记录和浏览器截图位于上层项目 `backups/seo-20261006/` 与 `.impeccable/review/seo-20261006/`，不随站点公开发布。
+
+后续由站点所有者登录并真实验证 Google Search Console、Bing Webmaster Tools、百度搜索资源平台，提交 `https://www.jielab.cc/sitemap.xml`（百度按已验证后台实际提供的提交入口），检查重要页面抓取/索引与 AI 可见性报告。没有执行所有权验证或平台提交，也没有创建虚假验证文件。Cloudflare 需登录后另行配置裸域入口及到 www 的重定向；当前所有规范 URL 仅使用已上线的 www 域名。合作登记仍待真实飞书 HTTPS 链接。
+
+本轮查阅的官方依据：
+
+- [Google AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)：AI 搜索沿用 SEO 基础，无须特殊 AI 文本文件或 schema。
+- [Google JavaScript SEO](https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics)：静态重要内容、可发现的链接和一致的 canonical。
+- [Google localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions)：互指的完整语言 URL。
+- [Google canonical guidance](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)：canonical 与 sitemap 的规范化信号。
+- [Bing AI visibility guidance](https://blogs.bing.com/search/2026/5/Evolving-role-of-the-index-From-ranking-pages-to-supporting-answers/)：内容清晰度与来源归属。
+- [Bing AI Performance](https://blogs.bing.com/search/2026/6/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare/)：登录后用实际数据观察 AI 引用。
+- [Google Generative AI performance report](https://support.google.com/webmasters/answer/16984139?hl=en-GB)：以账号实际显示的数据和权限为准。
+- [百度站点管理](https://ziyuan.baidu.com/site/index)：添加真实 www 主站、验证后提交资源与检查抓取。

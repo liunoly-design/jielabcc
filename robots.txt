@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.env
+Disallow: /scripts/
+Disallow: /README.md
+Disallow: /*.json$
+Disallow: /*.py$
+Disallow: /*.md$
+Sitemap: https://www.jielab.cc/sitemap.xml

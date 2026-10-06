@@ -23,7 +23,7 @@ def case_links(key):
  for i in range(1,4):
   c=CASES.get(key,[])[i-1] if len(CASES.get(key,[]))>=i else None
   label=f'<span class="case-link-label"><strong>{c["category"]["zh"]}</strong><small>{c["client"]["zh"]}</small></span>' if c else f'案例 {i}<small>资料待整理</small>'
-  out.append(f'<a href="case.html?industry={key}&amp;case={i}">{label}{ARROW}</a>')
+  out.append(f'<a href="{("case-"+key+"-"+str(i)+".html") if c else ("case.html?industry="+key+"&amp;case="+str(i))}">{label}{ARROW}</a>')
  return ''.join(out)
 class Translator(HTMLParser):
  def __init__(self): super().__init__(convert_charrefs=False); self.out=[]
@@ -52,7 +52,8 @@ class Translator(HTMLParser):
  def handle_comment(self,s): self.out.append('<!--'+s+'-->')
 for page in ('index.html','cases.html','case.html','articles.html','clients.html'):
  p=ROOT/page
- s=p.read_text()
+ s=re.sub(r'<!-- (SEO|SEARCH) START -->.*?<!-- \1 END -->', '', p.read_text(), flags=re.S)
+ s=re.sub(r'((?:href|src)="(?:style.css|fonts.css|app.js|case-data.js))\?v=[^"]*', r'\1', s)
  s=re.sub(r'<svg viewBox="91 633 354 96".*?</svg>','<img src="assets/logo-bilingual.png" width="1032" height="256" alt="杰哥与黄猫规范横版 Logo">',s,count=1)
  if 'class="language-switch"' not in s:
   s=s.replace('</nav></div></header>',f'</nav><a class="language-switch" href="en/{page}" hreflang="en" lang="en" aria-label="English version">EN</a></div></header>')
@@ -90,3 +91,6 @@ for page in ('index.html','cases.html','case.html','articles.html','clients.html
 for article,title in zip(ARTICLES,TITLE_EN): article['titleEn']=title
 (ROOT/'case-data.js').write_text('window.LAB_CASES='+json.dumps(CASES,ensure_ascii=False)+';\nwindow.LAB_ARTICLES='+json.dumps(ARTICLES,ensure_ascii=False)+';\nwindow.LAB_CLIENTS='+json.dumps(CLIENTS,ensure_ascii=False)+';\n')
 print('Built all five Chinese / English page pairs.')
+
+from build_seo import build
+build()

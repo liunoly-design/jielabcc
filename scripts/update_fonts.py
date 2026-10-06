@@ -1,7 +1,7 @@
 from pathlib import Path
 from urllib.request import urlopen
 from urllib.parse import urlencode
-import re,concurrent.futures
+import re,concurrent.futures,hashlib
 root=Path(__file__).resolve().parents[1]
 texts=''.join(p.read_text() for p in root.rglob('*.html'))+(root/'app.js').read_text()+(root/'cases.json').read_text()+(root/'clients.json').read_text()
 chars=''.join(sorted(set(re.findall(r'[\u4e00-\u9fff\u3000-\u303f\uff00-\uffef]',texts))))+''.join(chr(i) for i in range(32,127))+'–×→·。'
@@ -23,5 +23,11 @@ lcss=urlopen(latin).read().decode()
 for i,url in enumerate(dict.fromkeys(re.findall(r'url\(([^)]+)\)',lcss))):
  name='lab-inter-'+str(i)+'.ttf'
  (root/'assets'/name).write_bytes(urlopen(url).read());lcss=lcss.replace(url,'assets/'+name)
-(root/'fonts.css').write_text(css+lcss.replace("'Inter'","'LabLatin'"))
+final_css=css+lcss.replace("'Inter'","'LabLatin'")
+final_css=re.sub(r'url\((assets/[^)]+)\)',lambda m:'url('+m[1]+'?v='+hashlib.sha256((root/m[1]).read_bytes()).hexdigest()[:12]+')',final_css)
+(root/'fonts.css').write_text(final_css)
 print('Chinese glyphs',len(chars),'font files',len(urls),'self-hosted exact weights')
+
+# Refresh page asset versions after writing the new font files.
+from build_seo import build
+build()
