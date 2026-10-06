@@ -98,6 +98,11 @@ def build():
   if p.get('service'):graph.append({'@type':'Service','@id':canonical+'#service','name':p['service'],'description':p['description'],'url':canonical,'provider':{'@id':BASE+'#organization'}})
   if file!='index.html':graph.append({'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'首页' if lang=='zh' else 'Home','item':url('index.html',lang)},{'@type':'ListItem','position':2,'name':p['title'],'item':canonical}]})
   tags='<!-- SEO START --><meta name="description" content="'+e(p['description'],quote=True)+'">'
+  icon_version=hashlib.sha256((ROOT/'favicon.ico').read_bytes()).hexdigest()[:12]
+  tags+='<link rel="icon" href="/favicon.ico?v='+icon_version+'" sizes="any">'
+  tags+='<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v='+icon_version+'">'
+  tags+='<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png?v='+icon_version+'">'
+  tags+='<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v='+icon_version+'">'
   if noindex:tags+='<meta name="robots" content="noindex,follow">'
   else:
    tags+='<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="'+canonical+'">'
